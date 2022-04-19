@@ -8,6 +8,7 @@
 <ui:composition template="/master.xhtml">
 	<ui:define name="content">
 		<h2>Lista de Posteos</h2>
+		<h:form>
 		<p:dataTable id="LstPosteo" value="#{posteoController.listaPosteos}"
 			var="pe" paginator="true" paginatorPosition="top"
 			rowsPerPageTemplate="5,10,15,20,25" rows="5" rowIndexVar="item"
@@ -36,6 +37,7 @@
 				actionListener="#{posteoController.delete(pe)}" />
 			</p:column>
 		</p:dataTable>
+		</h:form>
 	</ui:define>
 </ui:composition>
 </html>
