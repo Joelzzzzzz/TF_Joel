@@ -18,22 +18,22 @@ public class PosteoController {
 
 	@Inject
 	private IPosteoService pService;
-	
+
 	private Posteo p;
 	List<Posteo> listaPosteos;
-	
+
 	@PostConstruct
 	public void init() {
-		this.listaPosteos=new ArrayList<Posteo>();
-		this.p=new Posteo();
+		this.listaPosteos = new ArrayList<Posteo>();
+		this.p = new Posteo();
 		this.list();
 	}
-	
+
 	public String newPosteo() {
 		this.setP(new Posteo());
 		return "posteo.xhtml";
 	}
-	
+
 	public void insert() {
 		try {
 			pService.insert(p);
@@ -41,15 +41,15 @@ public class PosteoController {
 			System.out.println("Error ocurrió en el controlador de posteo al insertar");
 		}
 	}
-	
+
 	public void list() {
 		try {
-			listaPosteos=pService.list();
+			listaPosteos = pService.list();
 		} catch (Exception e) {
 			System.out.println("Error al listar personas en el controlador");
 		}
 	}
-	
+
 	public void delete(Posteo pers) {
 		try {
 			pService.delete(pers.getIdPosteo());
@@ -58,9 +58,7 @@ public class PosteoController {
 		}
 	}
 
-	
-	
-	//getters and setters
+	// getters and setters
 	public IPosteoService getpService() {
 		return pService;
 	}

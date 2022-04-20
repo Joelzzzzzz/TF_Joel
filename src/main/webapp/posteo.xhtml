@@ -24,12 +24,12 @@
 			<p:calendar id="fecha" pattern="dd/MM/yyyy"
 				value="#{posteoController.p.fechaPosteo}" showOn="button"
 				timeZone="America/Mexico_City"></p:calendar>
-			
+			  
 			<h:outputLabel value="CantReaccion" for="cantreaccion"
 				styleClass="control-label" />
 			<p:inputText id="cantreaccion" styleClass="form-control"
 				value="#{posteoController.p.cantReacciones}"></p:inputText>
-				
+			 
 			<p:commandButton value="Grabar"
 				actionListener="#{posteoController.insert()}"
 				action="posteo?faces-redirect=true" update="@form"></p:commandButton>
